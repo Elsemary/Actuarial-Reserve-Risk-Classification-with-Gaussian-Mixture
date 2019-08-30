@@ -1,5 +1,5 @@
 ## Actuarial Reserve Risk Classification with Gaussian Mixture
-
+###### ARRC
 
 
 
@@ -31,10 +31,10 @@ as we see here
 
 <img src="https://i.ibb.co/dKnxPy8/11.jpg" title="equation" alt="equation"></a>
 
-our data not really ideal for using the Gaussian model ! 
-but the fun part is that it's really like lognormal so we can convert it to normal or at least like normal using log transfrom 
+Our data not really ideal for using the Gaussian model ! 
+But the fun part is that it's like lognormal so we can convert it to normal or at least like normal using log transfrom 
 
-after applying log transform we have : 
+After applying log transform we have : 
 
 <img src="https://i.ibb.co/88NfsbY/12.jpg" title="equation" alt="equation"></a>
 
@@ -55,13 +55,12 @@ from sklearn.mixture import GaussianMixture
 from sklearn.model_selection import StratifiedKFold
 from scipy.stats import multivariate_normal
 
-# this our most important part list 
-
+# this our most important list 
 groupby_list=['IncurredAgeBucket','CalYear','ClaimType','ClaimDuration','Gender']  
 
 ```
 > ###### The idea is we will manipulate the classification of our target several times and make a set of models,this will make a set of loss triangles
-We have big data and we don't know how to choose it in principle but we will loop it with some fix classifications that will be necessary to maintain chainladder rules.
+We have big data and we don't know how to choose it in principle but we will loop it with fixed classifications that will be necessary to maintain chainladder rules.
 
 ```shell
 #import data and use concat from pands to put all data file together
@@ -76,7 +75,7 @@ groupby_data=groupby_.sum().reset_index()
 
 ```
 
-here we will replace the orignal name of this labels to make it more easy for us
+Here we will replace the orignal name of this labels to make it more easy for us
 ```shell
 by_data = pd.DataFrame(np.array(groupby_data))
 groupby_data['IncurredAgeBucket'].replace(to_replace=['0-49'], value=int(0),inplace=True)
@@ -114,4 +113,22 @@ elif y[1][2] > 0.05 :
 #as we see above our data may(may not) follow normal distribution but it not in ideal shape, so we can do log transform 
 #before using GP model 
 #one reason that we decide to use log transform is that Histogram give us kind of lognormal shape
+```
+
+applying log transform and plot one more time 
+
+```shell
+#In this code part and next code we will explain the way of ARRC work and dealing with G-mixtuer 
+#So you can find the full documentation in the py file (You will find some part of this code inside big loop)
+# Transform part using lN(x+1) if we use in future any predictive method we can reverse it using e^(x-1)
+datatrans1=np.log1p(groupby_data['AmountPaid'])
+new_=groupby_data[groupby_list[nu*2]].astype(np.int32) # nu here its the loop counter
+datatrans=np.array([new_,datatrans1]).T # here we merge labels with data after log transform 
+
+
+#check avelabilty to apply G-mixtuer model
+fig, ax = plt.subplots()
+pd.DataFrame(datatrans).plot.kde(ax=ax, legend=False, title='Histogram:check new shape for GP after log  ')
+pd.DataFrame(datatrans).plot.hist(ax=ax)
+
 ```
