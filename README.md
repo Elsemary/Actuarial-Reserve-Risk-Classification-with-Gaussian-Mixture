@@ -1,4 +1,4 @@
-##Actuarial reserve modling with Gaussian Mixture
+## Actuarial reserve modling with Gaussian Mixture
 
 
 
@@ -12,3 +12,5 @@ Also we will use the new data generation from our model as a measure of the expe
 
 
 ###### start with this beautiful equation
+
+<img src="https://docs.scipy.org/doc/scipy-0.14.0/reference/_images/math/3e1b1a5eef9c95b3a62ee32069e3e772adabce34.png" title="equation" alt="equation"></a>
