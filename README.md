@@ -68,11 +68,14 @@ We have big data and we don't know how to classify it in principle but we will d
 #import data and use concat from pands to put all data file together
 sorted_data=data.sort_values(['IncurredAgeBucket']).reset_index(drop=True) #sort and fix indixing
 
-
+#This will help us inside loop to creat multiple models 
 groupby_=sorted_data.groupby([ groupby_list[np.random.randint(0,2)],groupby_list[2],
-                                      groupby_list[np.random.randint(3,8)]]) # here our idea to manipulate data classification randomly
-                                      #This will help us inside loop to creat multiple models 
-groupby_data=groupby_.sum().reset_index()
+                                      groupby_list[np.random.randint(3,8)]])
+                                      # here our idea to manipulate data classification randomly
+                                      
+groupby_data=groupby_.sum().reset_index() #sum using groupby
 
 ```
+
+
 
