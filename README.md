@@ -1,4 +1,4 @@
-## Actuarial reserve Risk classification with Gaussian Mixture
+## Actuarial Reserve Risk Classification with Gaussian Mixture
 
 
 
@@ -57,23 +57,21 @@ from scipy.stats import multivariate_normal
 
 # this our most important part list 
 
-groupby_list=['IncurredAgeBucket','ClaimDuration','CalYear','Gender','ClaimType','GroupIndicator',
-              'AttainedAgeBucket','ServiceDays']  
+groupby_list=['IncurredAgeBucket','CalYear','ClaimType','ClaimDuration','Gender']  
 
 ```
-> ###### The idea is we will randomly manipulate the classification of data several times and make a set of models,this will make a set of loss triangles
-We have big data and we don't know how to classify it in principle but we will do it randomly with some fix classifications that will be necessary to maintain chainladder rules.
+> ###### The idea is we will manipulate the classification of our target several times and make a set of models,this will make a set of loss triangles
+We have big data and we don't know how to choose it in principle but we will loop it with some fix classifications that will be necessary to maintain chainladder rules.
 
 ```shell
 #import data and use concat from pands to put all data file together
 sorted_data=data.sort_values(['IncurredAgeBucket']).reset_index(drop=True) #sort and fix indixing
 
-#This will help us inside loop to creat multiple models 
-groupby_=sorted_data.groupby([ groupby_list[np.random.randint(0,2)],groupby_list[2],
-                                      groupby_list[np.random.randint(3,8)]])
-                                      # here our idea to manipulate data classification randomly
-                                      
-groupby_data=groupby_.sum().reset_index() #sum using groupby
+#This will help us to keep this class in our data (Groupby function, excludes classifications if they are not inside the function, or deal with them in bad way)
+groupby_=sorted_data.groupby([ groupby_list[0],groupby_list[1],groupby_list[2],
+                              groupby_list[3],groupby_list[4]])
+groupby_data=groupby_.sum().reset_index()
+                                       #sum using groupby
 
 ```
 
