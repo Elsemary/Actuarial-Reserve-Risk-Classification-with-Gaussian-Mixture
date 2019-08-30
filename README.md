@@ -67,7 +67,8 @@ We have big data and we don't know how to choose it in principle but we will loo
 #import data and use concat from pands to put all data file together
 sorted_data=data.sort_values(['IncurredAgeBucket']).reset_index(drop=True) #sort and fix indixing
 
-#This will help us to keep this class in our data (Groupby function, excludes classifications if they are not inside the function, or deal with them in bad way)
+#This will help us to keep this class in our data 
+#(Groupby function, excludes classifications if they are not inside the function, or deal with them in bad way)
 groupby_=sorted_data.groupby([ groupby_list[0],groupby_list[1],groupby_list[2],
                               groupby_list[3],groupby_list[4]])
 groupby_data=groupby_.sum().reset_index()
@@ -75,5 +76,42 @@ groupby_data=groupby_.sum().reset_index()
 
 ```
 
+here we will replace the orignal name of this labels to make it more easy for us
+```shell
+by_data = pd.DataFrame(np.array(groupby_data))
+groupby_data['IncurredAgeBucket'].replace(to_replace=['0-49'], value=int(0),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['50'], value=int(1),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['55'], value=int(2),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['60'], value=int(3),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['65'], value=int(4),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['70'], value=int(5),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['75'], value=int(6),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['80'], value=int(7),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['85'], value=int(8),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['90'], value=int(9),inplace=True)
+groupby_data['IncurredAgeBucket'].replace(to_replace=['90+'], value=int(10),inplace=True)
 
+groupby_data['Gender'].replace(to_replace=['M'], value=int(0),inplace=True)
+groupby_data['Gender'].replace(to_replace=['F'], value=int(1),inplace=True)
 
+groupby_data['ClaimType'].replace(to_replace=['ALF'], value=int(0),inplace=True)
+groupby_data['ClaimType'].replace(to_replace=['HHC'], value=int(1),inplace=True)
+groupby_data['ClaimType'].replace(to_replace=['NH'], value=int(2),inplace=True)
+groupby_data['ClaimType'].replace(to_replace=['Unk'], value=int(3),inplace=True)
+```
+
+here we will use histogram to check our data shape
+
+```shell
+fig, ax = plt.subplots()
+groupby_data['AmountPaid'].plot.kde(ax=ax, legend=False, title='Histogram: check normallaty ')
+groupby_data['AmountPaid'].plot.hist(ax=ax)
+y=stats.anderson(groupby_data['AmountPaid'], dist='norm') #sample estimates normallity test
+if y[1][2] <0.05 :#check normality
+    print('its follow normal')
+elif y[1][2] > 0.05 :
+    print('no its not normal')
+        #as we see above our data could follow normal dist. but it Not in ideal shape, so we can do log transform 
+        #before using GP model 
+        #one reason that we decide to use log transform is that Histogram give us kind of lognormal shape
+```
