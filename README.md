@@ -111,7 +111,7 @@ if y[1][2] <0.05 :#check normality
     print('its follow normal')
 elif y[1][2] > 0.05 :
     print('no its not normal')
-        #as we see above our data could follow normal dist. but it Not in ideal shape, so we can do log transform 
-        #before using GP model 
-        #one reason that we decide to use log transform is that Histogram give us kind of lognormal shape
+#as we see above our data may(may not) follow normal distribution but it not in ideal shape, so we can do log transform 
+#before using GP model 
+#one reason that we decide to use log transform is that Histogram give us kind of lognormal shape
 ```
