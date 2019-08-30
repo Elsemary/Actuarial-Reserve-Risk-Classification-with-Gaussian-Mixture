@@ -1,4 +1,4 @@
-
+##Actuarial reserve modling with Gaussian Mixture
 
 
 
