@@ -1,5 +1,5 @@
 ## Actuarial Reserve Risk Classification with Gaussian Mixture
-###### ARRC
+#### >ARRC
 
 
 
