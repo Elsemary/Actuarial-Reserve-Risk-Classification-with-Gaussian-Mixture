@@ -23,7 +23,22 @@ This can, of course, be seen with the naked eye by drawing the histogram like :
 <img src="https://i.ibb.co/ctmTfZb/rsz-68747470733a2f2f692e737461636b2e696d6775722e636f6d2f583843794d2e706e67.png" title="equation" alt="equation"></a>
 
 From above histogram it is clear that we are facing a mixture of two Gaussian distributions 
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/dPsWkbH/13.jpg" alt="13" border="0"></a>
 
 ### Some problems with the data
 Non common problems faced by many such as missing data and ... etc
 > Problem in the form of data when we draw histagram
+as we see here 
+
+<img src="https://i.ibb.co/dKnxPy8/11.jpg" title="equation" alt="equation"></a>
+
+our data not really ideal for using the Gaussian model ! 
+but the fun part is that it's really like lognormal so we can convert it to normal or at least like normal using log transfrom 
+
+after applying log transform we have : 
+
+<img src="https://i.ibb.co/88NfsbY/12.jpg" title="equation" alt="equation"></a>
+
+Here we see that the data is similar to the mixed Gaussian distribution with 2D 
+
+
