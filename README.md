@@ -44,4 +44,35 @@ As we thought, the EM algorithm decided that the distribution was 2D mixed
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/dPsWkbH/13.jpg" alt="13" border="0"></a>
 
+Let's start working with some codes:
+
+```shell
+# importing libs.
+
+import pandas as pd
+import seaborn as sns
+from sklearn.mixture import GaussianMixture
+from sklearn.model_selection import StratifiedKFold
+from scipy.stats import multivariate_normal
+
+# this our most important part list 
+
+groupby_list=['IncurredAgeBucket','ClaimDuration','CalYear','Gender','ClaimType','GroupIndicator',
+              'AttainedAgeBucket','ServiceDays']  
+
+```
+> ###### The idea is we will randomly manipulate the classification of data several times and make a set of models,this will make a set of loss triangles
+We have big data and we don't know how to classify it in principle but we will do it randomly with some fix classifications that will be necessary to maintain chainladder rules.
+
+```shell
+#import data and use concat from pands to put all data file together
+sorted_data=data.sort_values(['IncurredAgeBucket']).reset_index(drop=True) #sort and fix indixing
+
+
+groupby_=sorted_data.groupby([ groupby_list[np.random.randint(0,2)],groupby_list[2],
+                                      groupby_list[np.random.randint(3,8)]]) # here our idea to manipulate data classification randomly
+                                      #This will help us inside loop to creat multiple models 
+groupby_data=groupby_.sum().reset_index()
+
+```
 
