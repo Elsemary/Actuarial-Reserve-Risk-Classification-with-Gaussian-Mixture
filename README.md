@@ -24,3 +24,6 @@ This can, of course, be seen with the naked eye by drawing the histogram like :
 
 From above histogram it is clear that we are facing a mixture of two Gaussian distributions 
 
+### Some problems with the data
+Non common problems faced by many such as missing data and ... etc
+> Problem in the form of data when we draw histagram
