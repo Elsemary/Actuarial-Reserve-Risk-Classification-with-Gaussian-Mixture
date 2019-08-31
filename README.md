@@ -166,5 +166,11 @@ Note that : you can here use AIC but since AIC dealing with small size sample an
 
 
 We can plot this now to see the best mixture number for random sample 
+
 <img src="https://www.researchgate.net/profile/Soo_Kim12/publication/6747415/figure/fig5/AS:277829540433934@1443251132875/BIC-values-corresponding-to-the-number-of-mixture-components-of-the-GMM-to-describe-the.png" title="equation" alt="equation"></a>
+
+Remeber : lowe bic is best 
+
+> Regularization of the covariance matrix 
+In many applications we may facing high dimensional problem , to avoide this problem we may use diffrant ways one of this way is that to add some value in the diagonal of matrix and this what we will do next 
 
