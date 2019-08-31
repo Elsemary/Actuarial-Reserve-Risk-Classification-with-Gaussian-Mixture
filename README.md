@@ -223,6 +223,7 @@ We've finished sum and have combined the labels into one list with our pre-proce
 ### So here we have to find a way to classify the classification into risk levels
 
 >suppouse that we have C=(c1,c2,c3...cn) and X=(x1,x2,...xn),where c is class corresponding to our observation and C list its not unique and x is observation then Cu=(c1,c2,c3) where Cu is unique class after apply sum in previous step we have here Cu , such that for every x we have unique Cu=(c1,c2,c3...ck) where k is the number of features or labels from model that we develop and ck < 1  .
+
 > Algorithm 1 : Find max(Cu) for all X  then sum corresponding value of max(Cu) , Risk will be from the highest to smallest based on sum #this Algorithm I didn't use it
 
 > Algorithm 2 : Part one (Find Cu > 0.4 for all X) then Part 2 (sum corresponding value of Cu > 0.4) , Part 3(Risk will be from the highest to smallest based on sum) # this is the Algorithm that i use it
