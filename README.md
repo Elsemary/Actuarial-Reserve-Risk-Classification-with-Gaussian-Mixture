@@ -193,3 +193,11 @@ test_accuracy = np.mean(y_test_pred.ravel() == y_test.ravel()) * 100
 
 After we have finished modeling, and if we set a standard of accuracy, say, 70% or more,then we will prepare for the design of the loss triangle, and the same operations we do, will be simulated on our class [Class A , Class B ...etc]
 
+```shell
+loss_t_data=groupby_data #Data processing for loss triangle 
+predi=estimator.predict(datatrans) # data after transformation (if data don't follow normal distribution)
+loss_t_data['class']=predi #predict label for evry value that we have
+pre_data = loss_t_data['AmountPaid'].groupby([loss_t_data['CalYear']
+                                             ,loss_t_data['ClaimDuration']]).sum().reset_index()#sum our data with respect 
+```
+#### As we see above we summing AmountPaid respect to CalYear & ClaimDuration we make the same process for our label value
