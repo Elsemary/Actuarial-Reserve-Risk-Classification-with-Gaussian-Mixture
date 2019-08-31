@@ -256,7 +256,7 @@ As we see the colors show the level of risk accumulated within each number inclu
 
 The final out put after triangle loss is : 
 
-<a href="https://ibb.co/m4XxTXb"><img src="https://i.ibb.co/Xt3wL3j/Final-out.png" width="800" height="300" alt="Final-out" border="0"></a>
+<a href=""><img src="https://imgur.com/yIQvdbO"  alt="Final-out" border="0"></a>
 
                     
                     
