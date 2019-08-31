@@ -10,7 +10,7 @@ We will not focus too much on the loss triangle or use an innovative way to crea
 The final shape of the loss triangle will be different, as it will be a heat map showing the different ratings for each number,
 Also we will use the new data generation from our model as a measure of the expectation of the missing part of the loss triangle.
 
-> you can download all the data file from <a href="https://www.dropbox.com/s/fxoqnyzh9rrejcr/final_data4.xlsx?dl=0" target="_blank">**Here**</a> and <a href="https://www.dropbox.com/s/8iw4hxjod84dtsa/final_data3.xlsx?dl=0" target="_blank">**Here**</a> and <a href="https://www.dropbox.com/s/08tcedphnud3gvz/final_data2.xlsx?dl=0" target="_blank">**Here**</a> and the last file is <a href="https://www.dropbox.com/s/y0sqcu82fat5pcl/final_data1.xlsx?dl=0" target="_blank">**Here**</a>
+> You can easily download all the data file from <a href="https://www.dropbox.com/s/fxoqnyzh9rrejcr/final_data4.xlsx?dl=0" target="_blank">**Here**</a> and <a href="https://www.dropbox.com/s/8iw4hxjod84dtsa/final_data3.xlsx?dl=0" target="_blank">**Here**</a> and <a href="https://www.dropbox.com/s/08tcedphnud3gvz/final_data2.xlsx?dl=0" target="_blank">**Here**</a> and the last file is <a href="https://www.dropbox.com/s/y0sqcu82fat5pcl/final_data1.xlsx?dl=0" target="_blank">**Here**</a>
 
 ###### start with this beautiful equation
 
