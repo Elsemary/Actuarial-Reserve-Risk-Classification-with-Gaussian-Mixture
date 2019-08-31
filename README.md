@@ -256,7 +256,7 @@ As we see the colors show the level of risk accumulated within each number inclu
 The final out put after triangle loss is :
 
 ---
-<img src="https://serving.photos.photobox.com/277710951981acd15266290bfd3242297562cf7c31402f6ce0ddb9faa038b0f0845ccc0c.jpg" title="equation" alt="equation"></a>
+<img src="https://serving.photos.photobox.com/33387814e42f61510447835b462265aa66f076d8160aedcf3814c227d112404ed825763b.jpg" title="equation" alt="equation"></a>
 
 ---
                     
@@ -268,9 +268,9 @@ This will give the actuary the ability to know the level of risk it was in this 
 
 ## Support
 
-Reach out to me at one of the Email !
+Reach out to me by Email !
 
-- Email at `onnoasd@hotmail.com`
+- Email  `onnoasd@hotmail.com`
 
 ---
 
