@@ -201,3 +201,44 @@ pre_data = loss_t_data['AmountPaid'].groupby([loss_t_data['CalYear']
                                              ,loss_t_data['ClaimDuration']]).sum().reset_index()#sum our data with respect 
 ```
 #### As we see above we summing AmountPaid respect to CalYear & ClaimDuration we make the same process for our label value
+
+After the completion of the class prosses , we will have categorized the data in will have categorized the data in ClaimDuration inside CalYear 
+Next step is sum prosses and the result will be for sure as percentage for each class 
+
+```shell
+#sum our labels and convert it to percentage
+creat_prob_for_class=[]
+for o in range (12):
+    for k in range (12):
+        for i in range (n_classes):
+            y=np.sum(np.array(class_for_Y_D[o][k])==i)/len(class_for_Y_D[o][k])
+            creat_prob_for_class.append(y)
+```
+
+> This is most important part of our model because it's an effective way of knowing the structure of risks, we'll explain this next
+
+We've finished sum and have combined the labels into one list with our pre-processed data to become a loss triangle 
+
+### Now we have labels, but the problem is how to figure out what each poster stands for (I mean for the risks).
+### So here we have to find a way to classify the classification into risk levels
+
+>suppouse that we have C=(c1,c2,c3...cn) and X=(x1,x2,...xn),where c is class corresponding to our observation and C list its not unique and x is observation then Cu=(c1,c2,c3) where Cu is unique class after apply sum in previous step we have here Cu , such that for every x we have unique Cu=(c1,c2,c3...ck) where k is the number of features or labels from model that we develop and ck < 1  .
+> Algorithm 1 : Find max(Cu) for all X  then sum corresponding value of max(Cu) , Risk will be from the highest to smallest based on sum #this Algorithm I didn't use it
+
+> Algorithm 2 : Part one (Find Cu > 0.4 for all X) then Part 2 (sum corresponding value of Cu > 0.4) , Part 3(Risk will be from the highest to smallest based on sum) # this is the Algorithm that i use it
+
+Algorithm 2 for classify the classification into risk levels 
+
+```shell
+Risk_description_for_every_class=[]
+for index_ in range (n_classes):
+    ind_=np.where(np.array(pre_data)[:,index_+3]>.40)# Part one 
+    le=len(ind_[0])
+    x=sum(pre_data.iloc[ind_[0][[i for i in range(le)]]].iloc[:,2]) #Part 2 
+    Risk_description_for_every_class.append([x,index_])
+This_our_risk_class=sorted(Risk_description_for_every_class,reverse=True) # Part 3
+```
+
+The out put will be like 
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/9Z7tLCL/xc.png" alt="xc" border="0"></a>
