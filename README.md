@@ -165,6 +165,6 @@ wehre L is the maximized value of the likelihood function for the estimated mode
 Note that : you can here use AIC but since AIC dealing with small size sample and we have big sample size so i prefer to use BIC
 
 
-we can drow this now to see the best mixture number
-
+We can plot this now to see the best mixture number for random sample 
+<img src="https://www.researchgate.net/profile/Soo_Kim12/publication/6747415/figure/fig5/AS:277829540433934@1443251132875/BIC-values-corresponding-to-the-number-of-mixture-components-of-the-GMM-to-describe-the.png" title="equation" alt="equation"></a>
 
