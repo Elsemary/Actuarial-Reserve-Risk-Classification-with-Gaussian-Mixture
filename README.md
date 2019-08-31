@@ -258,13 +258,13 @@ The final out put after triangle loss is :
 
 ---
 
-<a href="https://ibb.co/m4XxTXb"><img src="https://i.ibb.co/Xt3wL3j/Final-out.png" alt="Final-out" border="0"></a>   
+<a href="https://ibb.co/m4XxTXb"><img src="https://www.dropbox.com/s/3etplmw4to5cd4d/final.png?dl=0" alt="Final-out" border="0"></a>   
 
 ---
                     
 We have finished, we now have a loss triangle and next to it a list containing the detail of each number in this triangle
 The detail will be the level of risk from which this number came because this number is the sum of the previous
-
+This will give the actuary the ability to know the level of risk it was in this year.
 
 ---
 
@@ -275,4 +275,4 @@ Reach out to me at one of the Email !
 - Email at `onnoasd@hotmail.com`
 
 ---
-This will give the actuary the ability to know the level of risk it was in this year.
+
