@@ -131,5 +131,40 @@ datatrans=np.array([new_,datatrans1]).T # here we merge labels with data after l
 fig, ax = plt.subplots()
 pd.DataFrame(datatrans).plot.kde(ax=ax, legend=False, title='Histogram:check new shape for GP after log  ')
 pd.DataFrame(datatrans).plot.hist(ax=ax)
+```
+Here we will start littel machine learning work we will break the data into two parts. The goal of this is to make one part test for the other.
+
+```shell
+# Break up the dataset into X train (75%) and X test (25%) sets.
+skf = StratifiedKFold(n_splits=4)
+# Only take the first fold.
+train_index, test_index = next(iter(skf.split(datatrans,np.full(np.shape(datatrans)[0],1))))
+#apply test and train to our data
+X_train = datatrans[train_index]
+X_test = datatrans[test_index]
 
 ```
+As we know we are looking for target to class our data with supervise-learning the best job that our loop do for us is to test more than one label class that already in our data (you can see py file for more info)
+
+let's code ! 
+
+```shell
+# here other intrsting part 
+#find the best mixture number using bic with different covariances type
+optimal=[]
+for s in range (2,6):
+    for cov_type in ['spherical', 'diag', 'tied', 'full'] :
+            models=GaussianMixture(n_components=s, covariance_type=cov_type,max_iter=150,n_init=20
+                                   ,random_state=500).fit(X_train)
+            bic=models.bic(datatrans)# bic number
+            optimal.append([bic,cov_type,s])
+```
+this is the equition of bic 
+` BIC = −2 lnL + k ln (n) `
+wehre L is the maximized value of the likelihood function for the estimated model ,k is the number of free parameters , n number of observations 
+Note that : you can here use AIC but since AIC dealing with small size sample and we have big sample size so i prefer to use BIC
+
+
+we can drow this now to see the best mixture number
+
+
