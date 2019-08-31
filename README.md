@@ -247,8 +247,7 @@ The out put will be like
 
 The semi-final out put is like : 
 
-<a href="https://ibb.co/KyXYjMN"><img src="https://i.ibb.co/ysXDnwh/simi.png" alt="simi" border="0"></a>
-
+<img src="https://serving.photos.photobox.com/89301137914cae49c61fe5f3f9015840d3aa0fe66819eb7027ebfb02ca94e146716f9bc7.jpg" title="equation" alt="equation"></a>
 As we see the colors show the level of risk accumulated within each number includes a set of insurance policies.
 
 
