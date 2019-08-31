@@ -243,3 +243,34 @@ This_our_risk_class=sorted(Risk_description_for_every_class,reverse=True) # Part
 The out put will be like 
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/9Z7tLCL/xc.png" alt="xc" border="0"></a>
+
+
+The semi-final out put is like : 
+
+<a href="https://ibb.co/KyXYjMN"><img src="https://i.ibb.co/ysXDnwh/simi.png" alt="simi" border="0"></a>
+
+As we see the colors show the level of risk accumulated within each number includes a set of insurance policies.
+
+
+
+
+The final out put after triangle loss is : 
+
+<a href="https://ibb.co/m4XxTXb"><img src="https://i.ibb.co/Xt3wL3j/Final-out.png" alt="Final-out" border="0"></a>
+
+                    
+                    
+We have finished, we now have a loss triangle and next to it a list containing the detail of each number in this triangle
+The detail will be the level of risk from which this number came because this number is the sum of the previous
+
+
+---
+
+## Support
+
+Reach out to me at one of the Email !
+
+- Email at `onnoasd@hotmail.com`
+
+---
+This will give the actuary the ability to know the level of risk it was in this year.
