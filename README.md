@@ -257,7 +257,7 @@ As we see the colors show the level of risk accumulated within each number inclu
 The final out put after triangle loss is :
 
 ---
-<img src="https://www.dropbox.com/s/3etplmw4to5cd4d/final.png?dl=0" title="equation" alt="equation"></a>
+<img src="https://previews.dropbox.com/p/thumb/AAjrTylmC_p-aOkmNDqevcbzkkeCAmwpwCIBx8dF_vsQ5tD0-V7XpZyFpy4PM7hue4cIwvON4xMKf6ve4pQPd-eyqHGcqmij4WOq3zhodW5eGoUObKpjxEm_VIBcwrdFaLND6xScrVg7-ygDYweYzhqU9aYT-uFdbg-4n1knUIWHFP5DxXDIS8oarMof7Habvg_DpeEJKH7046v07RuMy8A44MPGUgBtbJb79IUqh66Av79eM-LIiQfKh2WbkbN8AlbfQsypF7mhmQAt9n4LiSVCbSLVZKAe97ic8IUB8iKtcG-1F0XZmScxp4etl5q85rvShfpYgvnO6n5hGIAi7G4XqotAsLFW_aG9XF9NqFJ-qA/p.png?fv_content=true&size_mode=5" title="equation" alt="equation"></a>
 
 ---
                     
