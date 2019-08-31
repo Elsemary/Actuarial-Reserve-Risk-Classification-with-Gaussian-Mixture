@@ -174,3 +174,22 @@ Remember : lowe bic is best
 > Regularization of the covariance matrix 
 In many applications we may facing high dimensional problem , to avoide this problem we may use diffrant ways one of this way is that to add some value in the diagonal of matrix and this what we will do next 
 
+```shell
+reg_=[0.0001,0.008,0.05,0.1,0.2,0.3,0.5]#useing different size to control covariance
+for u in (reg_):
+          estimators = {cov_type : GaussianMixture(n_components=n_classes,warm_start=True, # warm statrt to benefit from loop
+                        covariance_type=cov_type, max_iter=300,n_init=20, reg_covar=u ,init_params=param,
+                        random_state=np.random.randint(250,80000))
+                        for cov_type in ['spherical', 'diag', 'tied', 'full']}
+```
+
+Here we will use mean as a measure of error and in our cases it's useful way because we develop our model benefit from labels that we have so in supervised manner its a good way to test accuracy
+
+
+```shell
+y_test_pred = estimator.predict(X_test)
+test_accuracy = np.mean(y_test_pred.ravel() == y_test.ravel()) * 100
+```
+
+After we have finished modeling, and if we set a standard of accuracy, say, 70% or more,then we will prepare for the design of the loss triangle, and the same operations we do, will be simulated on our class [Class A , Class B ...etc]
+
